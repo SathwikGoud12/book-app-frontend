@@ -1,19 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-// 🔹 TEMP: Hardcode the base URL to debug issues
-const baseUrl = "http://localhost:5000/api/orders"; // Replace with `getBaseUrl()` if necessary
+import getBaseUrl from "../../../utils/baseURL"; // ✅ Ensure dynamic base URL
 
 const ordersApi = createApi({
     reducerPath: 'ordersApi',
     baseQuery: fetchBaseQuery({
-        baseUrl, // ✅ Ensure the base URL is correct
+        baseUrl: `${getBaseUrl()}/api`, // ✅ Base URL should not include "orders"
         credentials: 'include',
+        prepareHeaders: (headers) => {
+            const token = localStorage.getItem("token");
+            if (token) {
+                headers.set("Authorization", `Bearer ${token}`);
+            }
+            return headers;
+        },
     }),
     tagTypes: ['Orders'],
     endpoints: (builder) => ({
         createOrder: builder.mutation({
             query: (newOrder) => ({
-                url: "/", // ✅ Correct endpoint
+                url: "/orders", // ✅ Correct path
                 method: "POST",
                 body: newOrder,
                 credentials: 'include',
@@ -21,12 +26,10 @@ const ordersApi = createApi({
             invalidatesTags: ['Orders'],
         }),
         getOrderByEmail: builder.query({
-            query: (email) => {
-                console.log("Fetching orders for email:", email); // ✅ Debugging
-                return {
-                    url: `/?email=${encodeURIComponent(email)}`, // ✅ Correct query parameter format
-                };
-            },
+            query: (email) => ({
+                url: `/orders?email=${encodeURIComponent(email)}`, // ✅ Correct query parameter format
+                method: "GET",
+            }),
             providesTags: ['Orders'],
         }),
     }),
