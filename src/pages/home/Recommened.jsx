@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import BookCard from '../books/BookCard';
-import '../../pages/home/recommened.css'; // Adjusted path based on your folder structure
+import "./Recommened.css";
 import { useFetchAllBooksQuery } from '../../redux/features/books/booksApi';
 
 
