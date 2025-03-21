@@ -1,0 +1,23 @@
+.recommended-container {
+    padding-top: 64px; /* Equivalent to py-16 */
+    padding-bottom: 64px;
+}
+
+.recommended-heading {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    margin-bottom: 24px; /* Equivalent to mb-6 */
+}
+
+/* Swiper custom styles */
+.mySwiper {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* Swiper slide styles */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

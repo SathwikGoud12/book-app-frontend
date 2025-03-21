@@ -1,0 +1,159 @@
+/* Container */
+.add-book-container {
+    max-width: 32rem; /* Equivalent to max-w-lg */
+    margin: 0 auto;
+    padding: 0.75rem; /* Default padding for mobile */
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+    .add-book-container {
+        padding: 1.5rem; /* Equivalent to md:p-6 */
+    }
+}
+
+/* Title */
+.add-book-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+/* Form */
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Form Group (for inputs, selects, etc.) */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Error Styles */
+.input-error {
+    border-color: #ef4444;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    margin-bottom: 1rem;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.checkbox-input {
+    border-radius: 0.25rem;
+    color: #2563eb;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+.checkbox-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.checkbox-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* File Input Container */
+.file-input-container {
+    margin-bottom: 1rem;
+}
+
+.file-input-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.file-input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.file-input-selected {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Image Preview */
+.image-preview {
+    max-width: 200px;
+    margin-top: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #22c55e;
+    color: white;
+    font-weight: 700;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #16a34a;
+}
+
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

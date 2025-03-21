@@ -1,0 +1,142 @@
+/* ========== Dashboard Container Grid ========== */
+.dashboard-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ========== Dashboard Cards ========== */
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    min-height: 120px;
+}
+
+.chart-card {
+    grid-column: span 2; /* Chart spans 2 columns */
+}
+
+/* ========== Icon Container Styling ========== */
+.icon-container {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
+/* ========== Icon Colors ========== */
+.icon-purple { background-color: #F3E8FF; color: #7C3AED; }
+.icon-green { background-color: #D1FAE5; color: #10B981; }
+.icon-red { background-color: #FEE2E2; color: #DC2626; }
+.icon-blue { background-color: #DBEAFE; color: #3B82F6; }
+.icon-yellow { background-color: #FEF3C7; color: #D97706; }
+.icon-teal { background-color: #CCFBF1; color: #14B8A6; }
+
+/* ========== Font Styles ========== */
+.text-large {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.text-gray { color: #6B7280; }
+.text-xl { font-size: 1.25rem; font-weight: 600; }
+
+/* ========== Dashboard Section Grid ========== */
+.dashboard-section {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .dashboard-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .dashboard-section:first-of-type {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns: chart (2 columns) + 1 column for the other cards */
+        grid-template-rows: auto auto; /* Two rows for "Orders Left" and "Website Visits" */
+    }
+
+    .dashboard-section:first-of-type .chart-card {
+        grid-column: span 2; /* Chart spans 2 columns */
+        grid-row: span 2; /* Chart spans 2 rows */
+    }
+
+    .dashboard-section:first-of-type > .dashboard-card:not(.chart-card) {
+        grid-column: 3; /* "Orders Left" and "Website Visits" in the 3rd column */
+    }
+
+    .dashboard-section:first-of-type > .dashboard-card:nth-child(2) {
+        grid-row: 1; /* "Orders Left" in the first row */
+    }
+
+    .dashboard-section:first-of-type > .dashboard-card:nth-child(3) {
+        grid-row: 2; /* "Website Visits" in the second row */
+    }
+
+    .dashboard-section:last-of-type {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for "Users by average order" and "Students by type of studying" */
+    }
+}
+
+/* ========== Chart Placeholder ========== */
+.chart-placeholder {
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+/* ========== Users List Styling ========== */
+.user-list {
+    padding: 1.5rem;
+    max-height: 24rem;
+    overflow-y: auto;
+}
+
+.user-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* ========== User Avatar Styling ========== */
+.user-img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #E5E7EB;
+    margin-right: 0.75rem;
+}
+
+.user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

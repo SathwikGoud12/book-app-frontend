@@ -1,0 +1,161 @@
+/* Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    background-color: #6b46c1;
+}
+
+.sidebar-menu {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 16px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    color: #9ca3af;
+    border-radius: 8px;
+}
+
+.nav-item.active {
+    background-color: white;
+    color: #6b46c1;
+}
+
+.menu-text {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+}
+
+.menu-btn {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-left: 16px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.profile-name {
+    font-weight: bold;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.profile-pic img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.logout-btn {
+    margin-left: 10px;
+    padding: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.manage-books {
+    color: #6b46c1;
+    border: 1px solid #6b46c1;
+}
+
+.add-book {
+    background-color: #6b46c1;
+    color: white;
+}

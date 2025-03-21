@@ -1,0 +1,76 @@
+/* news.css */
+
+.news-container {
+    padding-top: 64px; /* Equivalent to py-16 */
+    padding-bottom: 64px;
+}
+
+.news-heading {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    margin-bottom: 24px; /* Equivalent to mb-6 */
+}
+
+/* Swiper container */
+.mySwiper {
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* Swiper slide content */
+.news-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+@media (min-width: 640px) {
+    .news-slide {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* News text content */
+.news-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.news-title {
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: 500; /* Equivalent to font-medium */
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.news-title:hover {
+    color: #3b82f6; /* Hover effect, blue color */
+}
+
+/* Underline bar */
+.news-underline {
+    width: 48px;
+    height: 4px;
+    background-color: #facc15; /* Primary color */
+    margin-bottom: 20px;
+}
+
+/* News description */
+.news-description {
+    font-size: 0.875rem;
+    color: #4b5563; /* Gray-600 */
+}
+
+/* News image container */
+.news-image-container {
+    flex-shrink: 0;
+}
+
+.news-image {
+    width: 100%;
+    object-fit: cover;
+}

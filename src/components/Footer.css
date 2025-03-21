@@ -1,0 +1,151 @@
+/* footer.css */
+
+.footer {
+    background-color: #1a202c; /* Equivalent to bg-gray-900 */
+    color: white;
+    padding: 40px 16px; /* Equivalent to py-10 px-4 */
+}
+
+/* Top Section */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Left Side - Logo and Nav */
+.footer-logo {
+    margin-bottom: 20px;
+    width: 144px; /* Equivalent to w-36 */
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-nav {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.footer-nav li {
+    list-style: none;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #facc15; /* Equivalent to text-primary */
+}
+
+/* Right Side - Newsletter */
+.footer-newsletter {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-newsletter {
+        text-align: left;
+    }
+}
+
+.footer-newsletter p {
+    margin-bottom: 16px;
+}
+
+.footer-input-container {
+    display: flex;
+    width: 100%;
+}
+
+.footer-input {
+    flex-grow: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    color: black;
+}
+
+.footer-button {
+    background-color: #facc15; /* Primary color */
+    padding: 8px 24px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.footer-button:hover {
+    background-color: #d97706; /* Equivalent to hover:bg-primary-dark */
+}
+
+/* Bottom Section */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #4a5568; /* Equivalent to border-gray-700 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Privacy Links */
+.footer-privacy {
+    display: flex;
+    gap: 24px;
+    text-align: center;
+}
+
+.footer-privacy a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-privacy a:hover {
+    color: #facc15; /* Equivalent to text-primary */
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-social a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #facc15; /* Equivalent to text-primary */
+}

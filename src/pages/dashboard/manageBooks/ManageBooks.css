@@ -1,0 +1,157 @@
+/* Section Container */
+.manage-books-section {
+    padding: 1rem 0;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.manage-books-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    padding: 0 1.5rem;
+}
+
+/* Card Container */
+.manage-books-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/* Header */
+.manage-books-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    background: #f1f5f9;
+}
+
+.header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+/* See All Button */
+.see-all-btn {
+    background-color: #4f46e5;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.see-all-btn:hover {
+    background-color: #4338ca;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+/* Table */
+.books-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+/* Table Header */
+.books-table thead {
+    background-color: #f3f4f6;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.books-table th {
+    padding: 1rem;
+    color: #374151;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+.books-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s;
+}
+
+.books-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Table Cells */
+.books-table td {
+    padding: 1rem;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* Actions */
+.table-cell-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Edit Link */
+.edit-link {
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    background: #e0f2fe;
+    transition: 0.2s;
+}
+
+.edit-link:hover {
+    background: #bfdbfe;
+    text-decoration: underline;
+}
+
+/* Delete Button */
+.delete-btn {
+    font-weight: 600;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1rem;
+    }
+    .see-all-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .books-table th,
+    .books-table td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}

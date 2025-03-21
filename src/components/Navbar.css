@@ -1,0 +1,143 @@
+/* Navbar Container */
+.navbar-container {
+  max-width: 1536px;
+  margin: auto;
+  padding: 16px 24px;
+}
+
+/* Navbar Flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Menu Icon */
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+  width: 288px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  background-color: #EAEAEA;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+/* User Avatar */
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  cursor: pointer;
+}
+
+/* Active Avatar */
+.active-avatar {
+  border: 2px solid #ff9800;
+}
+
+/* Wishlist Button */
+.wishlist-btn {
+  display: none;
+}
+
+/* Cart Button */
+.cart-btn {
+  position: relative;
+  background-color: #facc15;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Cart Count */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  width: 200px;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #f4f4f4;
+}
+
+/* Logout Button */
+.dropdown-item button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}

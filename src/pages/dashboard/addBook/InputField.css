@@ -1,0 +1,29 @@
+/* Container */
+.input-field-container {
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+/* Label */
+.input-field-label {
+    display: block;
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #374151; /* Equivalent to text-gray-700 */
+    margin-bottom: 0.5rem;
+}
+
+/* Input */
+.input-field-input {
+    width: 100%; /* Equivalent to w-full */
+    padding: 0.5rem; /* Equivalent to p-2 */
+    border: 1px solid #d1d5db; /* Equivalent to border with gray-300 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+.input-field-input:focus {
+    outline: none; /* Equivalent to focus:outline-none */
+    border-color: #93c5fd; /* Equivalent to focus:border-blue-300 */
+    box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3); /* Equivalent to focus:ring with blue-300 */
+}
