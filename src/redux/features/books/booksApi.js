@@ -2,13 +2,14 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import getBaseUrl from "../../../utils/baseURL";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: `${getBaseUrl()}/api`, // ✅ FIXED: Base URL should not include "books"
+    baseUrl: `${getBaseUrl()}/api`, // Ensure correct base URL
     credentials: "include",
     prepareHeaders: (headers) => {
         const token = localStorage.getItem("token");
         if (token) {
             headers.set("Authorization", `Bearer ${token}`);
         }
+        headers.set("Content-Type", "application/json"); // Ensure correct content type
         return headers;
     }
 });
@@ -19,16 +20,17 @@ const booksApi = createApi({
     tagTypes: ["Books"],
     endpoints: (builder) => ({
         fetchAllBooks: builder.query({
-            query: () => "/books", // ✅ FIXED: Ensure correct path
+            query: () => "/books",
             providesTags: ["Books"]
         }),
         fetchBookById: builder.query({
-            query: (id) => `/books/${id}`, // ✅ FIXED: Ensure correct path
-            providesTags: (result, error, id) => [{ type: "Books", id }]
+            query: (id) => `/books/${id}`,
+            providesTags: (result, error, id) =>
+                result ? [{ type: "Books", id }] : [] // Fix: Prevents errors if result is undefined
         }),
         addBook: builder.mutation({
             query: (newBook) => ({
-                url: "/books/create-book", // ✅ FIXED: Ensure correct path
+                url: "/books",
                 method: "POST",
                 body: newBook,
             }),
@@ -36,7 +38,7 @@ const booksApi = createApi({
         }),
         updateBook: builder.mutation({
             query: ({ id, ...data }) => ({
-                url: `/books/edit/${id}`, // ✅ FIXED: Ensure correct path
+                url: `/books/${id}`,
                 method: "PUT",
                 body: data
             }),
@@ -44,7 +46,7 @@ const booksApi = createApi({
         }),
         deleteBook: builder.mutation({
             query: (id) => ({
-                url: `/books/${id}`, // ✅ FIXED: Ensure correct path
+                url: `/books/${id}`,
                 method: "DELETE"
             }),
             invalidatesTags: ["Books"]
