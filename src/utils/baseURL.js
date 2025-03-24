@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-    return "https://book-app-backend-rho.vercel.app".replace(/\/$/, ""); // Removes trailing slash if present
+    return "http://localhost:5000"
 }
 
 export default getBaseUrl;

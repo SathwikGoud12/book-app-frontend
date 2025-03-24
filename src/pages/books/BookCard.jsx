@@ -3,7 +3,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { Link } from "react-router-dom";
-import { getImgUrl } from "../../utils/getImgUrl";  // ✅ Import function
+import { getImgUrl } from "../../utils/getImgUrl"; // ✅ Ensure this function is correct
 import "./BookCard.css";
 
 function BookCard({ book }) {
@@ -13,15 +13,22 @@ function BookCard({ book }) {
     dispatch(addToCart(book));
   };
 
+  // ✅ Check and construct the correct image URL
+  const bookImage = book.coverImage ? getImgUrl(book.coverImage) : "/default-book.jpg";
+
   return (
     <div className="book-card">
       {/* ✅ Clickable Image to Redirect to SingleBook Page */}
       <Link to={`/books/${book._id}`} className="book-image-link">
         <img
-          src={getImgUrl(book.coverImage)} // ✅ Use getImgUrl to fix image path
+          src={bookImage}
           alt={book.title || "Book Image"}
           className="book-image"
           loading="lazy"
+          onError={(e) => {
+            e.target.onerror = null; // Prevent infinite loop
+            e.target.src = "/default-book.jpg"; // Fallback image
+          }}
         />
       </Link>
 
@@ -40,9 +47,7 @@ function BookCard({ book }) {
         {/* ✅ Price with Default Values */}
         <p className="book-price">
           ${book.newPrice || "0.00"}{" "}
-          {book.oldPrice && (
-            <span className="original-price">${book.oldPrice}</span>
-          )}
+          {book.oldPrice && <span className="original-price">${book.oldPrice}</span>}
         </p>
 
         {/* ✅ Add to Cart Button */}

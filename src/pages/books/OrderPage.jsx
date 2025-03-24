@@ -5,13 +5,13 @@ import "./OrderPage.css";
 
 const OrderPage = () => {
   const { currentUser } = useAuth();
+  const email = currentUser?.email;
 
-  // Ensure currentUser exists before fetching orders
-  const { data: orders = [], isLoading, isError } = useGetOrderByEmailQuery(
-    currentUser?.email
-  );
+  // Ensure API is not called with an undefined email
+  const { data: orders = [], isLoading, isError } = useGetOrderByEmailQuery(email, {
+    skip: !email, // Skips API call if email is undefined
+  });
 
-  // Debugging: Check the structure of orders
   useEffect(() => {
     console.log("Fetched Orders:", orders);
   }, [orders]);
@@ -42,9 +42,9 @@ const OrderPage = () => {
             <h3 className="order-subheading">Products:</h3>
             <ul className="order-products">
               {Array.isArray(order.productIds) && order.productIds.length > 0 ? (
-                order.productIds.map((product) => (
-                  <li key={product._id} className="order-product-id">
-                    {product._id} - {product.name}
+                order.productIds.map((productId) => (
+                  <li key={productId} className="order-product-id">
+                    {productId}
                   </li>
                 ))
               ) : (
